@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <title></title>
+    <head>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script>
+        // When the browser is ready...
+  $(document).ready function() {
+  
+    // Setup form validation on the #register-form element
+    $("#LogForm").validate({
+    
+        // Specify the validation rules
+        rules: {
+            username: "required",
+            
+            email: {
+                required: true,
+                email: true
+            },
+            
+            
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            username: "Please enter your name",
+            
+            
+            email: "Please enter a valid email address",
+            
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+  
+  </script>
+        
+    </head>
+    <body>
+    <form id="LogForm" action="" method="post" novalidate="novalidate">
+            <div>
+            <fieldset>
+             <p> <label for="username">User Name : </label>
+              <input type="text" id="username" width="50%"/></p>
+             <p> <label for="email">Email : </label>
+              <input type="text" id="email" width="50%"/></p>
+              <input type="submit" id="register" value="Register"/>
+            </fieldset>
+            </div>
+            </form>
+            
+            <script>
+                $(document).ready function() {
+                    $("#register").click function() {
+                        var username = $("#username").val();
+                        var email = $("#email").val();
+                        var userExists= localstorage.getitem("username");
+                        if (userExists && username == userExists) {
+                            alert("Error : "userExists" already exists");
+                            
+                        }
+                        else {
+                            alert("saving "+ username+"/"email+" to local storage");
+                            console.log("saving "+ username+"/"email+" to local storage");
+                            localstorage.setitem("username",username);
+                            localstorage.setitem("email",email);
+                        }
+                    }
+                }
+            </script>
+            </body>
+</html>

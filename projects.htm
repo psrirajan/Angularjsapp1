@@ -1,0 +1,17 @@
+<head>
+    
+   <link rel="stylesheet" href="style.css">
+   <script src="info.js"></script>
+</head>
+<body>
+<h3>List of Projects</h3>
+<div ng-app ng-controller="MyCtrl">
+    <ul>
+    <li ng-repeat=" opt in opts" ng-bind-html-unsafe="getContent(opt)" >
+        {{ opt.value }}
+    </li>
+    </ul>
+    
+    <p>{{opt}}</p>
+</div>
+</body>

@@ -1,0 +1,33 @@
+
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.7.0.js"></script>
+    <script src="example.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="input-group">
+        <input type="text" class="form-control"
+               datepicker-popup="dd.mm.yyyy"
+               ng-model="dt"
+               is-open="$parent.opened"
+               ng-required="true"
+               close-text="Close" />
+        <span class="input-group-btn">
+        <button style="height:34px;" class="btn btn-default" ng-click="$parent.opened=!$parent.opened">
+        <i class="icon-calendar"></i></button> <b><- button not working</b>
+        </span>
+      </div>
+      
+      <script>
+      $scope.open = function () {
+    $scope.opened = true;
+};
+</script>
+
+ 
+</div>
+  </body>
+</body>
+</html>
